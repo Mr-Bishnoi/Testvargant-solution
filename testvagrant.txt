@@ -1,0 +1,117 @@
+Name: - Kuldeep Bishnoi
+College: - Lovely Professional Unieversity 
+Year of pasing: 2023
+Phone no: 8805652929
+Emal id: bishnoik1543850@gmail.com
+---------------------------------------------------------------------------------
+
+Shopping Cart
+
+OVERVIEW
+A shopkeeper sells products. Some products are eligible for GST(Goods and Service
+Tax) and some are not. To attract customers the shopkeeper has offered 5% discount for
+products whose unit price is more than Rs. 500 or more
+A customer has added below products to basket
+Basket:
+Product Unit Price in Rupees GST in % Quantity
+1 Leather wallet 1100 18 1
+2 Umbrella 900 12 2
+3 Cigarette 200 28 3
+4 Honey 100 0 4
+PROBLEM TO SOLVE
+1. Calculate the total amount to be paid to the shop-keeper
+2. Identify the product for which we paid maximum GST
+3. Create a suitable data structure to hold products in the basket
+4. Let the solution be generic enough to accommodate more products to basket
+GUIDELINES
+1. Time to solve the problem : 50 minutes
+2. Please write - your name, college, year of passing, phone number and email
+address in the answer sheet.
+3. Tech stack is no bar - use any scripting/programming language to build the
+solution.
+4. Use the best of your object-oriented skills and strictly adhere to the language
+conventions.
+----------------------------------------------------------------------------------
+
+Code: -
+----------------------------------------------------------------------------------
+
+
+import java.util.*;
+class elements{
+   public
+    String products;
+    int price,gst,quantity;
+    int total=0;
+}
+class Main extends elements{
+    public static void main(String[] args) {
+        elements [] a = new elements[10];
+        int z,l=0;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter number of elements");
+        z= sc.nextInt();
+        int k=0;
+        int max;
+        for(int i=1;i<=z;i++)
+        {
+            a[i].products= sc.next();
+            a[i].price=sc.nextInt();
+            a[i].gst=sc.nextInt();
+            a[i].quantity=sc.nextInt();
+            a[i].total=(((a[i].gst*100)/a[i].price)+a[i].price)*a[i].gst;
+        }
+        max=a[0].gst;
+        l=a[0].total;
+        for(int i=1 ;i<z;i++)
+        {
+            if(max<a[i].gst)
+            {
+              k=i; 
+              max=a[i].gst;
+            }
+            l=l+a[i].total;
+        }
+        System.out.println("Product Having max gst is "+a[k].products);
+        System.out.println("Total Amout has to be paid "+l);
+    }
+}
+import java.util.*;
+class elements{
+   public
+    String products;
+    int price,gst,quantity;
+    int total=0;
+}
+class Main extends elements{
+    public static void main(String[] args) {
+        elements [] a = new elements[10];
+        int z,l=0;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter number of elements");
+        z= sc.nextInt();
+        int k=0;
+        int max;
+        for(int i=1;i<=z;i++)
+        {
+            a[i].products= sc.next();
+            a[i].price=sc.nextInt();
+            a[i].gst=sc.nextInt();
+            a[i].quantity=sc.nextInt();
+            a[i].total=(((a[i].gst*100)/a[i].price)+a[i].price)*a[i].gst;
+        }
+        max=a[0].gst;
+        l=a[0].total;
+        for(int i=1 ;i<z;i++)
+        {
+            if(max<a[i].gst)
+            {
+              k=i; 
+              max=a[i].gst;
+            }
+            l=l+a[i].total;
+        }
+        System.out.println("Product Having max gst is "+a[k].products);
+        System.out.println("Total Amout has to be paid "+l);
+    }
+}
